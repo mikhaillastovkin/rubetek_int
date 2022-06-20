@@ -9,9 +9,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let segment = CustomSegmentControll()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        view.addSubview(segment)
+        view.backgroundColor = .customBackgroundColor
+
+        segment.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            segment.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            segment.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            segment.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
+            segment.heightAnchor.constraint(equalToConstant: 44)
+        ])
     }
 
 
