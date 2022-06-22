@@ -19,7 +19,7 @@ final class RootViewController: UIViewController {
     }()
 
     private lazy var segmentedControll: CustomSegmentControll = {
-        let segmentedControll = CustomSegmentControll()
+        let segmentedControll = CustomSegmentControll(items: ["Камеры", "Двери"])
         segmentedControll.translatesAutoresizingMaskIntoConstraints = false
         return segmentedControll
     }()

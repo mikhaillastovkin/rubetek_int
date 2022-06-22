@@ -9,7 +9,7 @@ import UIKit
 
 final class CustomSegmentControll: UIView {
 
-    var selectedIndex: ((Int) -> Void)?
+    private var items: [String]
 
     private enum Constants {
         static let underlineViewColor: UIColor = .blueTintColor
@@ -23,19 +23,6 @@ final class CustomSegmentControll: UIView {
         navbar.barTintColor = .customBackgroundColor
         navbar.tintColor = .black
         navbar.unselectedItemTintColor = .black
-
-        let item1 = UITabBarItem(title: "Камеры", image: nil, tag: 0)
-        let item2 = UITabBarItem(title: "Двери", image: nil, tag: 1)
-
-        var items = [item1, item2]
-
-        items.forEach {
-            $0.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -16.0)
-            $0.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.segmentItemFont as Any], for: .normal)
-            $0.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.segmentItemFont as Any], for: .selected)
-        }
-
-        navbar.setItems(items, animated: true)
         navbar.translatesAutoresizingMaskIntoConstraints = false
         selectedIndex?(0)
         return navbar
@@ -51,6 +38,18 @@ final class CustomSegmentControll: UIView {
     private lazy var leadingDistanceConstraint: NSLayoutConstraint = {
         return bottomUnderlineView.leftAnchor.constraint(equalTo: navBar.leftAnchor)
     }()
+
+    var selectedIndex: ((Int) -> Void)?
+
+    init(items: [String]) {
+        self.items = items
+        super.init(frame: .zero)
+        addItems()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -72,6 +71,19 @@ final class CustomSegmentControll: UIView {
             leadingDistanceConstraint,
             bottomUnderlineView.widthAnchor.constraint(equalTo: navBar.widthAnchor, multiplier: 1 / CGFloat(navBar.items?.count ?? 2))
         ])
+    }
+
+    private func addItems() {
+        let tabBarItems = items
+            .enumerated()
+            .map { UITabBarItem(title: $0.element, image: nil, tag: $0.offset)}
+
+        tabBarItems.forEach {
+            $0.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -16.0)
+            $0.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.segmentItemFont as Any], for: .normal)
+            $0.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.segmentItemFont as Any], for: .selected)
+        }
+        navBar.setItems(tabBarItems, animated: true)
     }
 
     private func changeSegmentedControlLinePosition() {
