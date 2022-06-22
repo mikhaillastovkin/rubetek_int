@@ -11,5 +11,7 @@ extension UIFont {
     static let viewTitleFont = UIFont(name: "circe", size: 26)
     static let segmentItemFont = UIFont(name: "circe", size: 16)
     static let sectionTitleFont = UIFont(name: "circe", size: 21)
-    static let itemNameFont = UIFont(name: "circe", size: 17)
+    static let itemTitleFont = UIFont(name: "circe", size: 17)
+    static let itemStatusFont = UIFont(name: "circe", size: 14)
+    static let viewMainTitleFont = UIFont(name: "circe", size: 31)
 }

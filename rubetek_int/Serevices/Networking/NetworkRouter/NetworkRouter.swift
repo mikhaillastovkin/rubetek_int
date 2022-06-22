@@ -6,8 +6,16 @@
 //
 
 import Foundation
+import RealmSwift
 
-final class NetworkRouter {
+enum APIMethods {
+    case cams
+    case doors
+}
+
+final class NetworkRouter<T: Object> {
+
+    
 
     func getDoors(complition: @escaping ([Door]?, Error?) -> Void) {
         let parsService = ParsDataServise<[Door]>(loadDataSevice: LoadDataService())
@@ -16,10 +24,10 @@ final class NetworkRouter {
         }
     }
 
-    func getCams(complition: @escaping ([Camera]?, Error?) -> Void) {
+    func getCams(complition: @escaping (Cameras?, Error?) -> Void) {
         let parsService = ParsDataServise<Cameras>(loadDataSevice: LoadDataService())
         parsService.fechRequest(from: CamsEndPoint()) { cameras, error in
-            complition(cameras?.cameras, error)
+            complition(cameras, error)
         }
     }
 }

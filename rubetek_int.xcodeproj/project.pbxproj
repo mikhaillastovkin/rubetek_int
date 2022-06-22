@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7421C79828607F630087321A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C79728607F630087321A /* AppDelegate.swift */; };
 		7421C79A28607F630087321A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C79928607F630087321A /* SceneDelegate.swift */; };
-		7421C79C28607F630087321A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C79B28607F630087321A /* ViewController.swift */; };
+		7421C79C28607F630087321A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C79B28607F630087321A /* TableViewController.swift */; };
 		7421C7A128607F650087321A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7421C7A028607F650087321A /* Assets.xcassets */; };
 		7421C7A428607F650087321A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7421C7A228607F650087321A /* LaunchScreen.storyboard */; };
 		7421C7AD286080E90087321A /* EndPointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C7AC286080E90087321A /* EndPointProtocol.swift */; };
@@ -18,19 +18,25 @@
 		7421C7B528608AED0087321A /* LoadDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C7B428608AED0087321A /* LoadDataService.swift */; };
 		7421C7B828608B480087321A /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C7B728608B480087321A /* NetworkErrors.swift */; };
 		7421C7BB28608E2B0087321A /* ParsDataServiseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C7BA28608E2B0087321A /* ParsDataServiseProtocol.swift */; };
-		7421C7BD28608F300087321A /* RequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C7BC28608F300087321A /* RequestResult.swift */; };
 		7421C7C02860913D0087321A /* ParsDataServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C7BF2860913D0087321A /* ParsDataServise.swift */; };
 		7421C7C2286093F70087321A /* HTTPPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C7C1286093F70087321A /* HTTPPath.swift */; };
 		7421C7C6286097820087321A /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C7C5286097820087321A /* NetworkRouter.swift */; };
 		7421C7C928609FDE0087321A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C7C828609FDE0087321A /* Response.swift */; };
 		7421C7CB2860A2560087321A /* Door.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C7CA2860A2560087321A /* Door.swift */; };
 		7421C7CD2860A26D0087321A /* Cams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C7CC2860A26D0087321A /* Cams.swift */; };
-		7421C7CF2860A39F0087321A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C7CE2860A39F0087321A /* Item.swift */; };
 		7421C7F82860CE9C0087321A /* CustomSegmentControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C7F72860CE9C0087321A /* CustomSegmentControll.swift */; };
 		7421C7FB2860D16E0087321A /* circe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7421C7FA2860D16E0087321A /* circe.ttf */; };
 		7421C7FE2860D2020087321A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C7FD2860D2020087321A /* Fonts.swift */; };
 		7421C8002860D5700087321A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C7FF2860D56F0087321A /* Colors.swift */; };
 		7421C8042860E9FC0087321A /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C8032860E9FC0087321A /* RealmService.swift */; };
+		7421C8072860ED980087321A /* SnapshotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C8062860ED980087321A /* SnapshotTableViewCell.swift */; };
+		7421C80C28610A970087321A /* SnapShotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C80B28610A970087321A /* SnapShotView.swift */; };
+		7421C80E286119350087321A /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C80D286119350087321A /* TitleView.swift */; };
+		74D1EF9F2861BAF000A041AE /* SimpleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EF9E2861BAF000A041AE /* SimpleTableViewCell.swift */; };
+		74D1EFA12861BB2200A041AE /* AbstractTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EFA02861BB2200A041AE /* AbstractTableViewCell.swift */; };
+		74D1EFB9286260BF00A041AE /* CamsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EFB8286260BF00A041AE /* CamsTableView.swift */; };
+		74D1EFBB28626AB200A041AE /* DoorsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EFBA28626AB200A041AE /* DoorsTableView.swift */; };
+		74D1EFC2286274E200A041AE /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EFC1286274E100A041AE /* RootViewController.swift */; };
 		C876137D596AB85B3346A3C8 /* Pods_rubetek_int.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84F9D8B9FF4DDF48A41A84E /* Pods_rubetek_int.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +46,7 @@
 		7421C79428607F630087321A /* rubetek_int.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rubetek_int.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7421C79728607F630087321A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7421C79928607F630087321A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7421C79B28607F630087321A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7421C79B28607F630087321A /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7421C7A028607F650087321A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7421C7A328607F650087321A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7421C7A528607F650087321A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,19 +56,25 @@
 		7421C7B428608AED0087321A /* LoadDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadDataService.swift; sourceTree = "<group>"; };
 		7421C7B728608B480087321A /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
 		7421C7BA28608E2B0087321A /* ParsDataServiseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsDataServiseProtocol.swift; sourceTree = "<group>"; };
-		7421C7BC28608F300087321A /* RequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestResult.swift; sourceTree = "<group>"; };
 		7421C7BF2860913D0087321A /* ParsDataServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsDataServise.swift; sourceTree = "<group>"; };
 		7421C7C1286093F70087321A /* HTTPPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPPath.swift; sourceTree = "<group>"; };
 		7421C7C5286097820087321A /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		7421C7C828609FDE0087321A /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		7421C7CA2860A2560087321A /* Door.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Door.swift; sourceTree = "<group>"; };
 		7421C7CC2860A26D0087321A /* Cams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cams.swift; sourceTree = "<group>"; };
-		7421C7CE2860A39F0087321A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		7421C7F72860CE9C0087321A /* CustomSegmentControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentControll.swift; sourceTree = "<group>"; };
 		7421C7FA2860D16E0087321A /* circe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = circe.ttf; sourceTree = "<group>"; };
 		7421C7FD2860D2020087321A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		7421C7FF2860D56F0087321A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7421C8032860E9FC0087321A /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmService.swift; path = rubetek_int/Serevices/RealmService/RealmService.swift; sourceTree = "<group>"; };
+		7421C8062860ED980087321A /* SnapshotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTableViewCell.swift; sourceTree = "<group>"; };
+		7421C80B28610A970087321A /* SnapShotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotView.swift; sourceTree = "<group>"; };
+		7421C80D286119350087321A /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		74D1EF9E2861BAF000A041AE /* SimpleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewCell.swift; sourceTree = "<group>"; };
+		74D1EFA02861BB2200A041AE /* AbstractTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractTableViewCell.swift; sourceTree = "<group>"; };
+		74D1EFB8286260BF00A041AE /* CamsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamsTableView.swift; sourceTree = "<group>"; };
+		74D1EFBA28626AB200A041AE /* DoorsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsTableView.swift; sourceTree = "<group>"; };
+		74D1EFC1286274E100A041AE /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		E84F9D8B9FF4DDF48A41A84E /* Pods_rubetek_int.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rubetek_int.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -103,7 +115,9 @@
 				7421C7D32860CA880087321A /* Serevices */,
 				7421C79728607F630087321A /* AppDelegate.swift */,
 				7421C79928607F630087321A /* SceneDelegate.swift */,
-				7421C79B28607F630087321A /* ViewController.swift */,
+				7421C79B28607F630087321A /* TableViewController.swift */,
+				74D1EFC02862748900A041AE /* Controllers */,
+				7421C8052860ECBE0087321A /* Cells */,
 				7421C7D42860CAA50087321A /* View */,
 				7421C7C728609B3F0087321A /* Model */,
 				7421C7A028607F650087321A /* Assets.xcassets */,
@@ -121,7 +135,6 @@
 				7421C7B928608DFA0087321A /* ParsDataServise */,
 				7421C7B3286089370087321A /* LoadDataService */,
 				7421C7AE286080EC0087321A /* EndPoint */,
-				7421C7BE28608FA10087321A /* Result */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -162,14 +175,6 @@
 			path = ParsDataServise;
 			sourceTree = "<group>";
 		};
-		7421C7BE28608FA10087321A /* Result */ = {
-			isa = PBXGroup;
-			children = (
-				7421C7BC28608F300087321A /* RequestResult.swift */,
-			);
-			path = Result;
-			sourceTree = "<group>";
-		};
 		7421C7C3286097610087321A /* NetworkRouter */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,7 +189,6 @@
 				7421C7C828609FDE0087321A /* Response.swift */,
 				7421C7CA2860A2560087321A /* Door.swift */,
 				7421C7CC2860A26D0087321A /* Cams.swift */,
-				7421C7CE2860A39F0087321A /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +215,7 @@
 		7421C7D42860CAA50087321A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7421C8082860F1800087321A /* CustomViews */,
 				7421C7D62860CAD20087321A /* SegmentControll */,
 			);
 			path = View;
@@ -239,6 +244,35 @@
 				7421C7FF2860D56F0087321A /* Colors.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7421C8052860ECBE0087321A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				74D1EFA02861BB2200A041AE /* AbstractTableViewCell.swift */,
+				7421C8062860ED980087321A /* SnapshotTableViewCell.swift */,
+				74D1EF9E2861BAF000A041AE /* SimpleTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7421C8082860F1800087321A /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				7421C80B28610A970087321A /* SnapShotView.swift */,
+				7421C80D286119350087321A /* TitleView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		74D1EFC02862748900A041AE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				74D1EFB8286260BF00A041AE /* CamsTableView.swift */,
+				74D1EFBA28626AB200A041AE /* DoorsTableView.swift */,
+				74D1EFC1286274E100A041AE /* RootViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		A97DA466D81C1FDFDAE68FAB /* Frameworks */ = {
@@ -373,26 +407,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7421C7BD28608F300087321A /* RequestResult.swift in Sources */,
 				7421C8042860E9FC0087321A /* RealmService.swift in Sources */,
 				7421C7AD286080E90087321A /* EndPointProtocol.swift in Sources */,
-				7421C7CF2860A39F0087321A /* Item.swift in Sources */,
-				7421C79C28607F630087321A /* ViewController.swift in Sources */,
+				7421C79C28607F630087321A /* TableViewController.swift in Sources */,
 				7421C7B02860819B0087321A /* HTTPMethod.swift in Sources */,
 				7421C7BB28608E2B0087321A /* ParsDataServiseProtocol.swift in Sources */,
 				7421C7B528608AED0087321A /* LoadDataService.swift in Sources */,
 				7421C7C2286093F70087321A /* HTTPPath.swift in Sources */,
 				7421C7F82860CE9C0087321A /* CustomSegmentControll.swift in Sources */,
+				74D1EF9F2861BAF000A041AE /* SimpleTableViewCell.swift in Sources */,
+				74D1EFB9286260BF00A041AE /* CamsTableView.swift in Sources */,
 				7421C79828607F630087321A /* AppDelegate.swift in Sources */,
 				7421C8002860D5700087321A /* Colors.swift in Sources */,
 				7421C7C6286097820087321A /* NetworkRouter.swift in Sources */,
+				74D1EFA12861BB2200A041AE /* AbstractTableViewCell.swift in Sources */,
+				7421C80C28610A970087321A /* SnapShotView.swift in Sources */,
 				7421C7CD2860A26D0087321A /* Cams.swift in Sources */,
 				7421C7C928609FDE0087321A /* Response.swift in Sources */,
+				74D1EFBB28626AB200A041AE /* DoorsTableView.swift in Sources */,
+				7421C80E286119350087321A /* TitleView.swift in Sources */,
 				7421C7B828608B480087321A /* NetworkErrors.swift in Sources */,
+				74D1EFC2286274E200A041AE /* RootViewController.swift in Sources */,
 				7421C79A28607F630087321A /* SceneDelegate.swift in Sources */,
 				7421C7FE2860D2020087321A /* Fonts.swift in Sources */,
 				7421C7B2286089330087321A /* LoadDataServiceProtocol.swift in Sources */,
 				7421C7CB2860A2560087321A /* Door.swift in Sources */,
+				7421C8072860ED980087321A /* SnapshotTableViewCell.swift in Sources */,
 				7421C7C02860913D0087321A /* ParsDataServise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -5,34 +5,44 @@
 //  Created by Михаил Ластовкин on 20.06.2022.
 //
 
+
+
 import UIKit
 
 final class CustomSegmentControll: UIView {
+
+    var selectedIndex: ((Int) -> Void)?
 
     private enum Constants {
         static let underlineViewColor: UIColor = .blueTintColor
         static let underlineViewHeight: CGFloat = 2
     }
 
-    private lazy var segmentedControl: UISegmentedControl = {
-        let segmentedControl = UISegmentedControl()
+    private lazy var navBar: UITabBar = {
+        let navbar = UITabBar()
+        //        navbar.backgroundColor = .customBackgroundColor
+        navbar.layer.borderColor = UIColor.customBackgroundColor.cgColor
+        navbar.layer.masksToBounds = true
+        navbar.barTintColor = .customBackgroundColor
+        navbar.tintColor = .black
+        navbar.unselectedItemTintColor = .black
 
-        segmentedControl.backgroundColor = .customBackgroundColor
-        segmentedControl.selectedSegmentTintColor = .clear
+        let item1 = UITabBarItem(title: "Камеры", image: nil, tag: 0)
+        let item2 = UITabBarItem(title: "Двери", image: nil, tag: 1)
 
-        segmentedControl.insertSegment(withTitle: "First", at: 0, animated: true)
-        segmentedControl.insertSegment(withTitle: "Second", at: 1, animated: true)
+        var items = [item1, item2]
 
-        segmentedControl.selectedSegmentIndex = 0
-        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.segmentItemFont as Any],
-                                                for: .normal)
-        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.segmentItemFont as Any],
-                                                for: .selected)
+        items.forEach {
+            $0.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -16.0)
+            $0.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.segmentItemFont as Any], for: .normal)
+            $0.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.segmentItemFont as Any], for: .selected)
 
-        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
 
-        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        return segmentedControl
+        }
+        navbar.setItems(items, animated: true)
+        navbar.translatesAutoresizingMaskIntoConstraints = false
+        selectedIndex?(0)
+        return navbar
     }()
 
     private lazy var bottomUnderlineView: UIView = {
@@ -43,48 +53,53 @@ final class CustomSegmentControll: UIView {
     }()
 
     private lazy var leadingDistanceConstraint: NSLayoutConstraint = {
-        return bottomUnderlineView.leftAnchor.constraint(equalTo: segmentedControl.leftAnchor)
+        return bottomUnderlineView.leftAnchor.constraint(equalTo: navBar.leftAnchor)
     }()
 
     override func layoutSubviews() {
         super.layoutSubviews()
-
         self.backgroundColor = .customBackgroundColor
-
-        self.addSubview(segmentedControl)
+        self.addSubview(navBar)
         self.addSubview(bottomUnderlineView)
+        navBar.delegate = self
 
         NSLayoutConstraint.activate([
-            segmentedControl.topAnchor.constraint(equalTo: self.topAnchor),
-            segmentedControl.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            segmentedControl.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            segmentedControl.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            navBar.topAnchor.constraint(equalTo: self.topAnchor),
+            navBar.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            navBar.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            navBar.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
 
         NSLayoutConstraint.activate([
-            bottomUnderlineView.bottomAnchor.constraint(equalTo: segmentedControl.bottomAnchor),
+            bottomUnderlineView.bottomAnchor.constraint(equalTo: navBar.bottomAnchor),
             bottomUnderlineView.heightAnchor.constraint(equalToConstant: Constants.underlineViewHeight),
             leadingDistanceConstraint,
-            bottomUnderlineView.widthAnchor.constraint(equalTo: segmentedControl.widthAnchor, multiplier: 1 / CGFloat(segmentedControl.numberOfSegments))
+            bottomUnderlineView.widthAnchor.constraint(equalTo: navBar.widthAnchor, multiplier: 1 / CGFloat(navBar.items?.count ?? 2))
         ])
-    }
-
-
-    @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-        changeSegmentedControlLinePosition()
     }
 
 
     private func changeSegmentedControlLinePosition() {
-        let segmentIndex = CGFloat(segmentedControl.selectedSegmentIndex)
-        let segmentWidth = segmentedControl.frame.width / CGFloat(segmentedControl.numberOfSegments)
+        guard let selectedItem = navBar.selectedItem?.tag,
+              let countItems = navBar.items?.count
+        else { return }
+
+        selectedIndex?(selectedItem)
+        let segmentIndex = CGFloat(selectedItem)
+        let segmentWidth = navBar.frame.width / CGFloat(countItems)
         let leadingDistance = segmentWidth * segmentIndex
         UIView.animate(withDuration: 0.3, animations: { [weak self] in
             self?.leadingDistanceConstraint.constant = leadingDistance
             self?.layoutIfNeeded()
         })
     }
+}
 
+extension CustomSegmentControll: UITabBarDelegate {
+
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        changeSegmentedControlLinePosition()
+    }
 
 }
 

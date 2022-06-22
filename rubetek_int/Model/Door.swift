@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class Door: Object, Item, Codable {
+class Door: Object, Codable {
 
     @Persisted(primaryKey: true) var id: Int?
     @Persisted var name: String?

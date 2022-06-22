@@ -10,9 +10,10 @@ import RealmSwift
 
 class Cameras: Codable {
     var cameras: [Camera]
+    var room: [String]
 }
 
-class Camera: Object, Item, Codable {
+class Camera: Object, Codable {
     @Persisted(primaryKey: true) var id: Int?
     @Persisted var name: String?
     @Persisted var snapshot: String?
