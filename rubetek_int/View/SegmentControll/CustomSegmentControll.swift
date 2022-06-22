@@ -24,6 +24,7 @@ final class CustomSegmentControll: UIView {
         navbar.tintColor = .black
         navbar.unselectedItemTintColor = .black
         navbar.translatesAutoresizingMaskIntoConstraints = false
+        navbar.setItems(getItems(), animated: true)
         selectedIndex?(0)
         return navbar
     }()
@@ -44,7 +45,6 @@ final class CustomSegmentControll: UIView {
     init(items: [String]) {
         self.items = items
         super.init(frame: .zero)
-        addItems()
     }
 
     required init?(coder: NSCoder) {
@@ -73,7 +73,7 @@ final class CustomSegmentControll: UIView {
         ])
     }
 
-    private func addItems() {
+    private func getItems() -> [UITabBarItem] {
         let tabBarItems = items
             .enumerated()
             .map { UITabBarItem(title: $0.element, image: nil, tag: $0.offset)}
@@ -83,7 +83,7 @@ final class CustomSegmentControll: UIView {
             $0.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.segmentItemFont as Any], for: .normal)
             $0.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.segmentItemFont as Any], for: .selected)
         }
-        navBar.setItems(tabBarItems, animated: true)
+        return tabBarItems
     }
 
     private func changeSegmentedControlLinePosition() {

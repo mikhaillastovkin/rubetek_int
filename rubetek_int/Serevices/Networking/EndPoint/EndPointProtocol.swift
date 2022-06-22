@@ -40,16 +40,3 @@ extension EndPointProtocol {
         parametrs[key] = value
     }
 }
-
-struct DoorsEndPoint: EndPointProtocol {
-    var method: HTTPMethod = .get
-    var path: HTTPPath = .doors
-    var parametrs: [String : Any] = [:]
-
-}
-
-struct CamsEndPoint: EndPointProtocol {
-    var method: HTTPMethod = .get
-    var path: HTTPPath = .cams
-    var parametrs: [String : Any] = [:]
-}

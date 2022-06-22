@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Nuke
 
 final class SnapShotView: UIView {
 
@@ -98,16 +99,8 @@ final class SnapShotView: UIView {
         guard let from = from,
               let url = URL(string: from)
         else { return }
-
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url)
-            guard let data = data
-            else { return }
-            DispatchQueue.main.async {
-                let image = UIImage(data: data)
-                view.image = image
-            }
-        }
+        Nuke.cancelRequest(for: view)
+        Nuke.loadImage(with: url, into: view)
     }
     
     func clearView() {

@@ -22,3 +22,21 @@ class Camera: Object, Codable {
     @Persisted var rec: Bool?
     @Persisted var userName: String?
 }
+
+extension Camera: RealmItemProtocol {
+
+    static func loadData() {
+        let parseServise = ParsDataServise<Cameras>(loadDataSevice: LoadDataService())
+        parseServise.fechRequest(from: CamsEndPoint()) { cameras, error in
+            guard let cameraArray = cameras?.cameras
+            else { return }
+            try? RealmService.save(items: cameraArray)
+        }
+
+        struct CamsEndPoint: EndPointProtocol {
+            var method: HTTPMethod = .get
+            var path: HTTPPath = .cams
+            var parametrs: [String : Any] = [:]
+        }
+    }
+}
