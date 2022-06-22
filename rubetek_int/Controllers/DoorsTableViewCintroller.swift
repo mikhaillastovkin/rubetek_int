@@ -1,5 +1,5 @@
 //
-//  DoorsTableView.swift
+//  DooorsTV.swift
 //  rubetek_int
 //
 //  Created by Михаил Ластовкин on 22.06.2022.
@@ -8,38 +8,23 @@
 import UIKit
 import RealmSwift
 
-final class DoorsTableView: UIViewController {
+final class DoorsTableViewCintroller: UIViewController, TableViewProtocol {
 
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.separatorStyle = .none
-        tableView.backgroundColor = .customBackgroundColor
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
-    }()
+    typealias RealmType = Door
 
-    private var doorsArrray: Results<Door>?
-    private var notificationToken: NotificationToken?
+    var realmArray: Results<Door>?
+    var tableView: CustomTableView = CustomTableView(frame: .zero, style: .plain)
+    var notificationToken: NotificationToken?
 
     private let heightRowWithSnapshot = CGFloat(298)
-    private let heightRowWithoutSnapshot = CGFloat(72)
+    private let heightRowWithoutSnapshot = CGFloat(90)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
         setupTableView()
         checkData()
-
-        notificationToken = doorsArrray?.observe({ [weak self] change in
-            switch change {
-            case .initial(_):
-                self?.tableView.reloadData()
-            case .update(_, deletions: _, insertions: _, modifications: _):
-                self?.tableView.reloadData()
-            case .error(let error):
-                print(error)
-            }
-        })
+        setObserver()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -47,26 +32,13 @@ final class DoorsTableView: UIViewController {
         setupUI()
     }
 
-    private func setupUI() {
-        let safeArea = view.safeAreaLayoutGuide
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: safeArea.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
-        ])
-    }
-
-    private func setupTableView(){
+    func setupTableView() {
+        tableView.separatorStyle = .none
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(SnapshotTableViewCell.self, forCellReuseIdentifier: SnapshotTableViewCell.reuseIdentifire)
         tableView.register(SimpleTableViewCell.self, forCellReuseIdentifier: SimpleTableViewCell.reuseIdentifire)
         setRefreshControl()
-    }
-
-    private func checkData() {
-        doorsArrray = try? RealmService.load(typeOf: Door.self)
     }
 
     private func setRefreshControl() {
@@ -90,47 +62,73 @@ final class DoorsTableView: UIViewController {
     private func isSnapshot(door: Door?) -> Bool {
         door?.snapshot == nil ? false : true
     }
+
+    private func changeName(actionHandler: ((_ text: String?) -> Void)?) {
+        let alert = UIAlertController(title: "Введите имя",
+                                      message: nil,
+                                      preferredStyle: .alert)
+        alert.addTextField()
+        let actionOK = UIAlertAction(title: "Ok",
+                                     style: .default) { action in
+            guard let textField =  alert.textFields?.first
+            else {
+                actionHandler?(nil)
+                return
+            }
+            actionHandler?(textField.text)
+        }
+        let actionCancel = UIAlertAction(title: "Отмена",
+                                         style: .cancel)
+        alert.addAction(actionOK)
+        alert.addAction(actionCancel)
+        self.present(alert, animated: true)
+    }
 }
 
-extension DoorsTableView: UITableViewDataSource {
+extension DoorsTableViewCintroller: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        doorsArrray?.count ?? 0
+        return realmArray?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        if isSnapshot(door: doorsArrray?[indexPath.row]) {
+        if isSnapshot(door: realmArray?[indexPath.row]) {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SnapshotTableViewCell.reuseIdentifire, for: indexPath) as? SnapshotTableViewCell
             else { return UITableViewCell() }
 
-            cell.configure(door: doorsArrray?[indexPath.row])
+            cell.configure(door: realmArray?[indexPath.row])
             return cell
 
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SimpleTableViewCell.reuseIdentifire, for: indexPath) as? SimpleTableViewCell
             else { return UITableViewCell() }
-            cell.configure(item: doorsArrray?[indexPath.row])
+            cell.configure(item: realmArray?[indexPath.row])
             return cell
         }
     }
 }
 
-extension DoorsTableView: UITableViewDelegate {
+extension DoorsTableViewCintroller: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        isSnapshot(door: doorsArrray?[indexPath.row]) ? heightRowWithSnapshot : heightRowWithoutSnapshot
+        isSnapshot(door: realmArray?[indexPath.row]) ? heightRowWithSnapshot : heightRowWithoutSnapshot
     }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
-        let change = UIContextualAction(style: .normal, title: nil) { action, view, complition in
+        let change = UIContextualAction(style: .normal, title: nil) { [weak self] action, view, complition in
+
+            self?.changeName { text in
+                try? RealmService.changeNameDoor(object: self?.realmArray?[indexPath.row],
+                                            value: text)
+            }
             complition(true)
         }
         change.backgroundColor = .customBackgroundColor
         change.image = UIImage(named: "edit")
 
-        let favorite = UIContextualAction(style: .normal, title: nil) { action, view, complition in
+        let favorite = UIContextualAction(style: .normal, title: nil) { [weak self] action, view, complition in
+            try? RealmService.changeFavoriteDoor(object: self?.realmArray?[indexPath.row])
             complition(true)
         }
         favorite.backgroundColor = .customBackgroundColor

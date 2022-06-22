@@ -35,4 +35,29 @@ final class RealmService {
             realm.delete(object)
         }
     }
+
+    static func changeNameDoor(object: Door?, value: String?) throws {
+        let realm = try Realm()
+        try realm.write {
+            object?.name = value
+        }
+    }
+
+    static func changeFavoriteDoor(object: Door?) throws {
+        let realm = try Realm()
+        try realm.write {
+            guard let value = object?.favorites
+            else { return }
+            object?.favorites = !value
+        }
+    }
+
+    static func changeFavoriteCamera(object: Camera?) throws {
+        let realm = try Realm()
+        try realm.write {
+            guard let value = object?.favorites
+            else { return }
+            object?.favorites = !value
+        }
+    }
 }

@@ -34,8 +34,8 @@ final class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let camsVC = CamsTableView()
-        let doorsVC = DoorsTableView()
+        let camsVC = CamsTableViewController()
+        let doorsVC = DoorsTableViewCintroller()
 
         segmentedControll.selectedIndex = { [weak self] index in
             switch index {

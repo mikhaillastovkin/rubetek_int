@@ -63,7 +63,7 @@ final class SnapshotTableViewCell: AbstractTableViewCell {
     }
 
     func configure(door: Door?) {
-        snapShotView.configure(image: door?.snapshot, rec: false, favorite: false)
+        snapShotView.configure(image: door?.snapshot, rec: false, favorite: door?.favorites)
         titleView.configure(title: door?.name, status: nil, image: UIImage(named: "guardoff"))
     }
 

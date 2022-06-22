@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74092058286300AA008A94C0 /* CamsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74092057286300AA008A94C0 /* CamsTableViewController.swift */; };
 		7421C79828607F630087321A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C79728607F630087321A /* AppDelegate.swift */; };
 		7421C79A28607F630087321A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C79928607F630087321A /* SceneDelegate.swift */; };
-		7421C79C28607F630087321A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C79B28607F630087321A /* TableViewController.swift */; };
 		7421C7A128607F650087321A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7421C7A028607F650087321A /* Assets.xcassets */; };
 		7421C7A428607F650087321A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7421C7A228607F650087321A /* LaunchScreen.storyboard */; };
 		7421C7AD286080E90087321A /* EndPointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C7AC286080E90087321A /* EndPointProtocol.swift */; };
@@ -34,19 +34,20 @@
 		7421C80E286119350087321A /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C80D286119350087321A /* TitleView.swift */; };
 		74D1EF9F2861BAF000A041AE /* SimpleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EF9E2861BAF000A041AE /* SimpleTableViewCell.swift */; };
 		74D1EFA12861BB2200A041AE /* AbstractTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EFA02861BB2200A041AE /* AbstractTableViewCell.swift */; };
-		74D1EFB9286260BF00A041AE /* CamsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EFB8286260BF00A041AE /* CamsTableView.swift */; };
-		74D1EFBB28626AB200A041AE /* DoorsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EFBA28626AB200A041AE /* DoorsTableView.swift */; };
 		74D1EFC2286274E200A041AE /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EFC1286274E100A041AE /* RootViewController.swift */; };
+		74D1EFC62862EED300A041AE /* TableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EFC52862EED200A041AE /* TableViewProtocol.swift */; };
+		74D1EFC82862F58800A041AE /* DoorsTableViewCintroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EFC72862F58800A041AE /* DoorsTableViewCintroller.swift */; };
+		74D1EFCA2862FB2C00A041AE /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EFC92862FB2B00A041AE /* CustomTableView.swift */; };
 		C876137D596AB85B3346A3C8 /* Pods_rubetek_int.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84F9D8B9FF4DDF48A41A84E /* Pods_rubetek_int.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		180513EF8069C920174F7D83 /* Pods-rubetek_int.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rubetek_int.debug.xcconfig"; path = "Target Support Files/Pods-rubetek_int/Pods-rubetek_int.debug.xcconfig"; sourceTree = "<group>"; };
 		22B6FFC9E73C47B26A3518AC /* Pods-rubetek_int.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rubetek_int.release.xcconfig"; path = "Target Support Files/Pods-rubetek_int/Pods-rubetek_int.release.xcconfig"; sourceTree = "<group>"; };
+		74092057286300AA008A94C0 /* CamsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamsTableViewController.swift; sourceTree = "<group>"; };
 		7421C79428607F630087321A /* rubetek_int.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rubetek_int.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7421C79728607F630087321A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7421C79928607F630087321A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7421C79B28607F630087321A /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7421C7A028607F650087321A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7421C7A328607F650087321A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7421C7A528607F650087321A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,9 +73,10 @@
 		7421C80D286119350087321A /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		74D1EF9E2861BAF000A041AE /* SimpleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewCell.swift; sourceTree = "<group>"; };
 		74D1EFA02861BB2200A041AE /* AbstractTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractTableViewCell.swift; sourceTree = "<group>"; };
-		74D1EFB8286260BF00A041AE /* CamsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamsTableView.swift; sourceTree = "<group>"; };
-		74D1EFBA28626AB200A041AE /* DoorsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsTableView.swift; sourceTree = "<group>"; };
 		74D1EFC1286274E100A041AE /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		74D1EFC52862EED200A041AE /* TableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProtocol.swift; sourceTree = "<group>"; };
+		74D1EFC72862F58800A041AE /* DoorsTableViewCintroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsTableViewCintroller.swift; sourceTree = "<group>"; };
+		74D1EFC92862FB2B00A041AE /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
 		E84F9D8B9FF4DDF48A41A84E /* Pods_rubetek_int.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rubetek_int.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -111,11 +113,10 @@
 		7421C79628607F630087321A /* rubetek_int */ = {
 			isa = PBXGroup;
 			children = (
-				7421C7FC2860D1F40087321A /* Extensions */,
-				7421C7D32860CA880087321A /* Serevices */,
 				7421C79728607F630087321A /* AppDelegate.swift */,
 				7421C79928607F630087321A /* SceneDelegate.swift */,
-				7421C79B28607F630087321A /* TableViewController.swift */,
+				7421C7FC2860D1F40087321A /* Extensions */,
+				7421C7D32860CA880087321A /* Serevices */,
 				74D1EFC02862748900A041AE /* Controllers */,
 				7421C8052860ECBE0087321A /* Cells */,
 				7421C7D42860CAA50087321A /* View */,
@@ -259,6 +260,7 @@
 		7421C8082860F1800087321A /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				74D1EFC92862FB2B00A041AE /* CustomTableView.swift */,
 				7421C80B28610A970087321A /* SnapShotView.swift */,
 				7421C80D286119350087321A /* TitleView.swift */,
 			);
@@ -268,8 +270,9 @@
 		74D1EFC02862748900A041AE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				74D1EFB8286260BF00A041AE /* CamsTableView.swift */,
-				74D1EFBA28626AB200A041AE /* DoorsTableView.swift */,
+				74092057286300AA008A94C0 /* CamsTableViewController.swift */,
+				74D1EFC72862F58800A041AE /* DoorsTableViewCintroller.swift */,
+				74D1EFC52862EED200A041AE /* TableViewProtocol.swift */,
 				74D1EFC1286274E100A041AE /* RootViewController.swift */,
 			);
 			path = Controllers;
@@ -409,23 +412,24 @@
 			files = (
 				7421C8042860E9FC0087321A /* RealmService.swift in Sources */,
 				7421C7AD286080E90087321A /* EndPointProtocol.swift in Sources */,
-				7421C79C28607F630087321A /* TableViewController.swift in Sources */,
 				7421C7B02860819B0087321A /* HTTPMethod.swift in Sources */,
 				7421C7BB28608E2B0087321A /* ParsDataServiseProtocol.swift in Sources */,
 				7421C7B528608AED0087321A /* LoadDataService.swift in Sources */,
 				7421C7C2286093F70087321A /* HTTPPath.swift in Sources */,
 				7421C7F82860CE9C0087321A /* CustomSegmentControll.swift in Sources */,
 				74D1EF9F2861BAF000A041AE /* SimpleTableViewCell.swift in Sources */,
-				74D1EFB9286260BF00A041AE /* CamsTableView.swift in Sources */,
 				7421C79828607F630087321A /* AppDelegate.swift in Sources */,
+				74092058286300AA008A94C0 /* CamsTableViewController.swift in Sources */,
 				7421C8002860D5700087321A /* Colors.swift in Sources */,
 				7421C7C6286097820087321A /* NetworkRouter.swift in Sources */,
 				74D1EFA12861BB2200A041AE /* AbstractTableViewCell.swift in Sources */,
 				7421C80C28610A970087321A /* SnapShotView.swift in Sources */,
+				74D1EFC62862EED300A041AE /* TableViewProtocol.swift in Sources */,
 				7421C7CD2860A26D0087321A /* Cams.swift in Sources */,
 				7421C7C928609FDE0087321A /* Response.swift in Sources */,
-				74D1EFBB28626AB200A041AE /* DoorsTableView.swift in Sources */,
 				7421C80E286119350087321A /* TitleView.swift in Sources */,
+				74D1EFCA2862FB2C00A041AE /* CustomTableView.swift in Sources */,
+				74D1EFC82862F58800A041AE /* DoorsTableViewCintroller.swift in Sources */,
 				7421C7B828608B480087321A /* NetworkErrors.swift in Sources */,
 				74D1EFC2286274E200A041AE /* RootViewController.swift in Sources */,
 				7421C79A28607F630087321A /* SceneDelegate.swift in Sources */,

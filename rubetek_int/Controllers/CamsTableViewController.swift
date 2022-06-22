@@ -1,45 +1,30 @@
 //
-//  CamsTableView.swift
+//  CamsTableViewController.swift
 //  rubetek_int
 //
-//  Created by Михаил Ластовкин on 21.06.2022.
+//  Created by Михаил Ластовкин on 22.06.2022.
 //
 
 import UIKit
 import RealmSwift
 
-final class CamsTableView: UIViewController {
+final class CamsTableViewController: UIViewController, TableViewProtocol {
 
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.separatorStyle = .none
-        tableView.backgroundColor = .customBackgroundColor
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
-    }()
+    typealias RealmType = Camera
 
-    private var cameraArray: Results<Camera>?
-    private var notificationToken: NotificationToken?
+    var tableView: CustomTableView = CustomTableView(frame: .zero, style: .plain)
+
+    var realmArray: Results<Camera>?
+    var notificationToken: NotificationToken?
 
     private let heightRow = CGFloat(298)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .customBackgroundColor
         view.addSubview(tableView)
         setupTableView()
         checkData()
-
-        notificationToken = cameraArray?.observe({ [weak self] change in
-            switch change {
-            case .initial(_):
-                self?.tableView.reloadData()
-            case .update(_, deletions: _, insertions: _, modifications: _):
-                self?.tableView.reloadData()
-            case .error(let error):
-                print(error)
-            }
-        })
+        setObserver()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -47,24 +32,11 @@ final class CamsTableView: UIViewController {
         setupUI()
     }
 
-    private func setupUI() {
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        ])
-    }
-
-    private func setupTableView() {
+    func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(SnapshotTableViewCell.self, forCellReuseIdentifier: SnapshotTableViewCell.reuseIdentifire)
         setRefreshControl()
-    }
-
-    private func checkData() {
-        cameraArray = try? RealmService.load(typeOf: Camera.self)
     }
 
     private func setRefreshControl() {
@@ -86,22 +58,21 @@ final class CamsTableView: UIViewController {
     }
 }
 
-extension CamsTableView: UITableViewDataSource {
-
+extension CamsTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        cameraArray?.count ?? 0
+        realmArray?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SnapshotTableViewCell.reuseIdentifire, for: indexPath) as? SnapshotTableViewCell
         else { return UITableViewCell() }
 
-        cell.configure(camera: cameraArray?[indexPath.row])
+        cell.configure(camera: realmArray?[indexPath.row])
         return cell
     }
 }
 
-extension CamsTableView: UITableViewDelegate {
+extension CamsTableViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return heightRow
@@ -109,7 +80,8 @@ extension CamsTableView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
-        let favorite = UIContextualAction(style: .normal, title: nil) { action, view, complition in
+        let favorite = UIContextualAction(style: .normal, title: nil) { [weak self] action, view, complition in
+            try? RealmService.changeFavoriteCamera(object: self?.realmArray?[indexPath.row])
             complition(true)
         }
         favorite.backgroundColor = .customBackgroundColor

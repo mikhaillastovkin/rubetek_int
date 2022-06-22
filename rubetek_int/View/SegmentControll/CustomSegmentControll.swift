@@ -5,8 +5,6 @@
 //  Created by Михаил Ластовкин on 20.06.2022.
 //
 
-
-
 import UIKit
 
 final class CustomSegmentControll: UIView {
@@ -20,7 +18,6 @@ final class CustomSegmentControll: UIView {
 
     private lazy var navBar: UITabBar = {
         let navbar = UITabBar()
-        //        navbar.backgroundColor = .customBackgroundColor
         navbar.layer.borderColor = UIColor.customBackgroundColor.cgColor
         navbar.layer.masksToBounds = true
         navbar.barTintColor = .customBackgroundColor
@@ -36,9 +33,8 @@ final class CustomSegmentControll: UIView {
             $0.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -16.0)
             $0.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.segmentItemFont as Any], for: .normal)
             $0.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.segmentItemFont as Any], for: .selected)
-
-
         }
+
         navbar.setItems(items, animated: true)
         navbar.translatesAutoresizingMaskIntoConstraints = false
         selectedIndex?(0)
@@ -78,7 +74,6 @@ final class CustomSegmentControll: UIView {
         ])
     }
 
-
     private func changeSegmentedControlLinePosition() {
         guard let selectedItem = navBar.selectedItem?.tag,
               let countItems = navBar.items?.count
@@ -100,6 +95,5 @@ extension CustomSegmentControll: UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         changeSegmentedControlLinePosition()
     }
-
 }
 

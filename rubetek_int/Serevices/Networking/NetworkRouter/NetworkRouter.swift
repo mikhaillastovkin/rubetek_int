@@ -8,14 +8,7 @@
 import Foundation
 import RealmSwift
 
-enum APIMethods {
-    case cams
-    case doors
-}
-
 final class NetworkRouter<T: Object> {
-
-    
 
     func getDoors(complition: @escaping ([Door]?, Error?) -> Void) {
         let parsService = ParsDataServise<[Door]>(loadDataSevice: LoadDataService())
