@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		74092058286300AA008A94C0 /* CamsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74092057286300AA008A94C0 /* CamsTableViewController.swift */; };
 		7409205C2863965A008A94C0 /* RealmItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7409205B2863965A008A94C0 /* RealmItemProtocol.swift */; };
+		7409208928649456008A94C0 /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7409208828649456008A94C0 /* CellConfigurator.swift */; };
+		7409208F286497E9008A94C0 /* CamerasTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7409208E286497E9008A94C0 /* CamerasTableView.swift */; };
+		740920912864A263008A94C0 /* DoorsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740920902864A263008A94C0 /* DoorsTableView.swift */; };
+		740920932864A434008A94C0 /* CameraSnapshotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740920922864A434008A94C0 /* CameraSnapshotTableViewCell.swift */; };
+		740920952864A51F008A94C0 /* DoorSnapshotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740920942864A51E008A94C0 /* DoorSnapshotTableViewCell.swift */; };
 		7421C79828607F630087321A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C79728607F630087321A /* AppDelegate.swift */; };
 		7421C79A28607F630087321A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C79928607F630087321A /* SceneDelegate.swift */; };
 		7421C7A128607F650087321A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7421C7A028607F650087321A /* Assets.xcassets */; };
@@ -28,16 +33,18 @@
 		7421C7FB2860D16E0087321A /* circe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7421C7FA2860D16E0087321A /* circe.ttf */; };
 		7421C7FE2860D2020087321A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C7FD2860D2020087321A /* Fonts.swift */; };
 		7421C8002860D5700087321A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C7FF2860D56F0087321A /* Colors.swift */; };
-		7421C8042860E9FC0087321A /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C8032860E9FC0087321A /* RealmService.swift */; };
 		7421C8072860ED980087321A /* SnapshotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C8062860ED980087321A /* SnapshotTableViewCell.swift */; };
 		7421C80C28610A970087321A /* SnapShotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C80B28610A970087321A /* SnapShotView.swift */; };
 		7421C80E286119350087321A /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C80D286119350087321A /* TitleView.swift */; };
 		74D1EF9F2861BAF000A041AE /* SimpleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EF9E2861BAF000A041AE /* SimpleTableViewCell.swift */; };
 		74D1EFA12861BB2200A041AE /* AbstractTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EFA02861BB2200A041AE /* AbstractTableViewCell.swift */; };
 		74D1EFC2286274E200A041AE /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EFC1286274E100A041AE /* RootViewController.swift */; };
-		74D1EFC62862EED300A041AE /* TableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EFC52862EED200A041AE /* TableViewProtocol.swift */; };
 		74D1EFC82862F58800A041AE /* DoorsTableViewCintroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EFC72862F58800A041AE /* DoorsTableViewCintroller.swift */; };
 		74D1EFCA2862FB2C00A041AE /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EFC92862FB2B00A041AE /* CustomTableView.swift */; };
+		74E9D0402864F75B00EAE76B /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9D03F2864F75B00EAE76B /* RealmService.swift */; };
+		74E9D0442864F91000EAE76B /* DomofonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9D0432864F91000EAE76B /* DomofonViewController.swift */; };
+		74E9D0472864F98100EAE76B /* MainTitleLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9D0462864F98100EAE76B /* MainTitleLable.swift */; };
+		74E9D04C28650D6700EAE76B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9D04B28650D6700EAE76B /* GradientView.swift */; };
 		C876137D596AB85B3346A3C8 /* Pods_rubetek_int.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84F9D8B9FF4DDF48A41A84E /* Pods_rubetek_int.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +53,11 @@
 		22B6FFC9E73C47B26A3518AC /* Pods-rubetek_int.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rubetek_int.release.xcconfig"; path = "Target Support Files/Pods-rubetek_int/Pods-rubetek_int.release.xcconfig"; sourceTree = "<group>"; };
 		74092057286300AA008A94C0 /* CamsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamsTableViewController.swift; sourceTree = "<group>"; };
 		7409205B2863965A008A94C0 /* RealmItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmItemProtocol.swift; sourceTree = "<group>"; };
+		7409208828649456008A94C0 /* CellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
+		7409208E286497E9008A94C0 /* CamerasTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerasTableView.swift; sourceTree = "<group>"; };
+		740920902864A263008A94C0 /* DoorsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsTableView.swift; sourceTree = "<group>"; };
+		740920922864A434008A94C0 /* CameraSnapshotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSnapshotTableViewCell.swift; sourceTree = "<group>"; };
+		740920942864A51E008A94C0 /* DoorSnapshotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorSnapshotTableViewCell.swift; sourceTree = "<group>"; };
 		7421C79428607F630087321A /* rubetek_int.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rubetek_int.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7421C79728607F630087321A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7421C79928607F630087321A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,16 +79,18 @@
 		7421C7FA2860D16E0087321A /* circe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = circe.ttf; sourceTree = "<group>"; };
 		7421C7FD2860D2020087321A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		7421C7FF2860D56F0087321A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		7421C8032860E9FC0087321A /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmService.swift; path = rubetek_int/Serevices/RealmService/RealmService.swift; sourceTree = "<group>"; };
 		7421C8062860ED980087321A /* SnapshotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTableViewCell.swift; sourceTree = "<group>"; };
 		7421C80B28610A970087321A /* SnapShotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotView.swift; sourceTree = "<group>"; };
 		7421C80D286119350087321A /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		74D1EF9E2861BAF000A041AE /* SimpleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewCell.swift; sourceTree = "<group>"; };
 		74D1EFA02861BB2200A041AE /* AbstractTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractTableViewCell.swift; sourceTree = "<group>"; };
 		74D1EFC1286274E100A041AE /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		74D1EFC52862EED200A041AE /* TableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProtocol.swift; sourceTree = "<group>"; };
 		74D1EFC72862F58800A041AE /* DoorsTableViewCintroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsTableViewCintroller.swift; sourceTree = "<group>"; };
 		74D1EFC92862FB2B00A041AE /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
+		74E9D03F2864F75B00EAE76B /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		74E9D0432864F91000EAE76B /* DomofonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomofonViewController.swift; sourceTree = "<group>"; };
+		74E9D0462864F98100EAE76B /* MainTitleLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitleLable.swift; sourceTree = "<group>"; };
+		74E9D04B28650D6700EAE76B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		E84F9D8B9FF4DDF48A41A84E /* Pods_rubetek_int.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rubetek_int.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7409208A2864960B008A94C0 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				7409208828649456008A94C0 /* CellConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
 		7421C78B28607F630087321A = {
 			isa = PBXGroup;
 			children = (
@@ -113,18 +135,8 @@
 		7421C79628607F630087321A /* rubetek_int */ = {
 			isa = PBXGroup;
 			children = (
-				7421C79728607F630087321A /* AppDelegate.swift */,
-				7421C79928607F630087321A /* SceneDelegate.swift */,
-				7421C7FC2860D1F40087321A /* Extensions */,
-				7421C7D32860CA880087321A /* Serevices */,
-				74D1EFC02862748900A041AE /* Controllers */,
-				7421C8052860ECBE0087321A /* Cells */,
-				7421C7D42860CAA50087321A /* View */,
-				7421C7C728609B3F0087321A /* Model */,
-				7421C7A028607F650087321A /* Assets.xcassets */,
-				7421C7A228607F650087321A /* LaunchScreen.storyboard */,
-				7421C7A528607F650087321A /* Info.plist */,
-				7421C7F92860D1580087321A /* Fonts */,
+				74E9D02A2864F49C00EAE76B /* Core */,
+				74E9D0302864F5D100EAE76B /* Modules */,
 			);
 			path = rubetek_int;
 			sourceTree = "<group>";
@@ -134,7 +146,7 @@
 			children = (
 				7421C7B928608DFA0087321A /* ParsDataServise */,
 				7421C7B3286089370087321A /* LoadDataService */,
-				7421C7AE286080EC0087321A /* EndPoint */,
+				74E9D03D2864F70C00EAE76B /* Model */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -175,21 +187,11 @@
 			path = ParsDataServise;
 			sourceTree = "<group>";
 		};
-		7421C7C728609B3F0087321A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7421C7C828609FDE0087321A /* Response.swift */,
-				7409205B2863965A008A94C0 /* RealmItemProtocol.swift */,
-				7421C7CA2860A2560087321A /* Door.swift */,
-				7421C7CC2860A26D0087321A /* Cams.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		7421C7D02860C41C0087321A /* RealmService */ = {
 			isa = PBXGroup;
 			children = (
-				7421C8032860E9FC0087321A /* RealmService.swift */,
+				7409205B2863965A008A94C0 /* RealmItemProtocol.swift */,
+				74E9D03F2864F75B00EAE76B /* RealmService.swift */,
 			);
 			name = RealmService;
 			path = ../..;
@@ -203,15 +205,6 @@
 				7421C7AB2860809E0087321A /* Networking */,
 			);
 			path = Serevices;
-			sourceTree = "<group>";
-		};
-		7421C7D42860CAA50087321A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7421C8082860F1800087321A /* CustomViews */,
-				7421C7D62860CAD20087321A /* SegmentControll */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		7421C7D62860CAD20087321A /* SegmentControll */ = {
@@ -239,35 +232,231 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		7421C8052860ECBE0087321A /* Cells */ = {
+		74E9D02A2864F49C00EAE76B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7421C7F92860D1580087321A /* Fonts */,
+				74E9D02C2864F4F600EAE76B /* CustomView */,
+				7421C7D32860CA880087321A /* Serevices */,
+				7421C7FC2860D1F40087321A /* Extensions */,
+				74E9D02B2864F4AC00EAE76B /* AppFiles */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		74E9D02B2864F4AC00EAE76B /* AppFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7421C79728607F630087321A /* AppDelegate.swift */,
+				7421C79928607F630087321A /* SceneDelegate.swift */,
+				7421C7A028607F650087321A /* Assets.xcassets */,
+				7421C7A228607F650087321A /* LaunchScreen.storyboard */,
+				7421C7A528607F650087321A /* Info.plist */,
+			);
+			path = AppFiles;
+			sourceTree = "<group>";
+		};
+		74E9D02C2864F4F600EAE76B /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				74E9D04A28650D5300EAE76B /* Gradient */,
+				74E9D0452864F96300EAE76B /* MainTitle */,
+				7421C7D62860CAD20087321A /* SegmentControll */,
+				74E9D02E2864F54200EAE76B /* Cells */,
+				74E9D02D2864F51600EAE76B /* TableView */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		74E9D02D2864F51600EAE76B /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				74D1EFC92862FB2B00A041AE /* CustomTableView.swift */,
+				7409208A2864960B008A94C0 /* Configurator */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		74E9D02E2864F54200EAE76B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				74D1EFA02861BB2200A041AE /* AbstractTableViewCell.swift */,
 				7421C8062860ED980087321A /* SnapshotTableViewCell.swift */,
-				74D1EF9E2861BAF000A041AE /* SimpleTableViewCell.swift */,
+				74E9D02F2864F59400EAE76B /* ViewForCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		7421C8082860F1800087321A /* CustomViews */ = {
+		74E9D02F2864F59400EAE76B /* ViewForCell */ = {
 			isa = PBXGroup;
 			children = (
-				74D1EFC92862FB2B00A041AE /* CustomTableView.swift */,
 				7421C80B28610A970087321A /* SnapShotView.swift */,
 				7421C80D286119350087321A /* TitleView.swift */,
 			);
-			path = CustomViews;
+			path = ViewForCell;
 			sourceTree = "<group>";
 		};
-		74D1EFC02862748900A041AE /* Controllers */ = {
+		74E9D0302864F5D100EAE76B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				74E9D0412864F8CD00EAE76B /* Domofon */,
+				74E9D03B2864F6C000EAE76B /* Root */,
+				74E9D0352864F64100EAE76B /* Doors */,
+				74E9D0312864F5F000EAE76B /* Cameras */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		74E9D0312864F5F000EAE76B /* Cameras */ = {
+			isa = PBXGroup;
+			children = (
+				74E9D0342864F63100EAE76B /* Model */,
+				74E9D0332864F62100EAE76B /* TableView */,
+				74E9D0322864F60100EAE76B /* Controller */,
+			);
+			path = Cameras;
+			sourceTree = "<group>";
+		};
+		74E9D0322864F60100EAE76B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				74092057286300AA008A94C0 /* CamsTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		74E9D0332864F62100EAE76B /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				7409208E286497E9008A94C0 /* CamerasTableView.swift */,
+				74E9D03A2864F6AA00EAE76B /* Cell */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		74E9D0342864F63100EAE76B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7421C7CC2860A26D0087321A /* Cams.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		74E9D0352864F64100EAE76B /* Doors */ = {
+			isa = PBXGroup;
+			children = (
+				74E9D0382864F66700EAE76B /* Model */,
+				74E9D0372864F65600EAE76B /* TableView */,
+				74E9D0362864F64A00EAE76B /* Controller */,
+			);
+			path = Doors;
+			sourceTree = "<group>";
+		};
+		74E9D0362864F64A00EAE76B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				74D1EFC72862F58800A041AE /* DoorsTableViewCintroller.swift */,
-				74D1EFC52862EED200A041AE /* TableViewProtocol.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		74E9D0372864F65600EAE76B /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				740920902864A263008A94C0 /* DoorsTableView.swift */,
+				74E9D0392864F68E00EAE76B /* Cell */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		74E9D0382864F66700EAE76B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7421C7CA2860A2560087321A /* Door.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		74E9D0392864F68E00EAE76B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				740920942864A51E008A94C0 /* DoorSnapshotTableViewCell.swift */,
+				74D1EF9E2861BAF000A041AE /* SimpleTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		74E9D03A2864F6AA00EAE76B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				740920922864A434008A94C0 /* CameraSnapshotTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		74E9D03B2864F6C000EAE76B /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				74E9D03C2864F6C800EAE76B /* Controller */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		74E9D03C2864F6C800EAE76B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				74D1EFC1286274E100A041AE /* RootViewController.swift */,
 			);
-			path = Controllers;
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		74E9D03D2864F70C00EAE76B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74E9D03E2864F71E00EAE76B /* Response */,
+				7421C7AE286080EC0087321A /* EndPoint */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		74E9D03E2864F71E00EAE76B /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				7421C7C828609FDE0087321A /* Response.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		74E9D0412864F8CD00EAE76B /* Domofon */ = {
+			isa = PBXGroup;
+			children = (
+				74E9D0422864F8F900EAE76B /* Controller */,
+			);
+			path = Domofon;
+			sourceTree = "<group>";
+		};
+		74E9D0422864F8F900EAE76B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				74E9D0432864F91000EAE76B /* DomofonViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		74E9D0452864F96300EAE76B /* MainTitle */ = {
+			isa = PBXGroup;
+			children = (
+				74E9D0462864F98100EAE76B /* MainTitleLable.swift */,
+			);
+			path = MainTitle;
+			sourceTree = "<group>";
+		};
+		74E9D04A28650D5300EAE76B /* Gradient */ = {
+			isa = PBXGroup;
+			children = (
+				74E9D04B28650D6700EAE76B /* GradientView.swift */,
+			);
+			path = Gradient;
 			sourceTree = "<group>";
 		};
 		A97DA466D81C1FDFDAE68FAB /* Frameworks */ = {
@@ -402,22 +591,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7421C8042860E9FC0087321A /* RealmService.swift in Sources */,
+				74E9D0402864F75B00EAE76B /* RealmService.swift in Sources */,
 				7421C7AD286080E90087321A /* EndPointProtocol.swift in Sources */,
+				740920952864A51F008A94C0 /* DoorSnapshotTableViewCell.swift in Sources */,
 				7421C7B02860819B0087321A /* HTTPMethod.swift in Sources */,
 				7421C7BB28608E2B0087321A /* ParsDataServiseProtocol.swift in Sources */,
 				7421C7B528608AED0087321A /* LoadDataService.swift in Sources */,
 				7421C7C2286093F70087321A /* HTTPPath.swift in Sources */,
 				7421C7F82860CE9C0087321A /* CustomSegmentControll.swift in Sources */,
 				74D1EF9F2861BAF000A041AE /* SimpleTableViewCell.swift in Sources */,
+				740920932864A434008A94C0 /* CameraSnapshotTableViewCell.swift in Sources */,
+				7409208F286497E9008A94C0 /* CamerasTableView.swift in Sources */,
 				7409205C2863965A008A94C0 /* RealmItemProtocol.swift in Sources */,
 				7421C79828607F630087321A /* AppDelegate.swift in Sources */,
 				74092058286300AA008A94C0 /* CamsTableViewController.swift in Sources */,
 				7421C8002860D5700087321A /* Colors.swift in Sources */,
 				74D1EFA12861BB2200A041AE /* AbstractTableViewCell.swift in Sources */,
 				7421C80C28610A970087321A /* SnapShotView.swift in Sources */,
-				74D1EFC62862EED300A041AE /* TableViewProtocol.swift in Sources */,
 				7421C7CD2860A26D0087321A /* Cams.swift in Sources */,
+				74E9D0472864F98100EAE76B /* MainTitleLable.swift in Sources */,
 				7421C7C928609FDE0087321A /* Response.swift in Sources */,
 				7421C80E286119350087321A /* TitleView.swift in Sources */,
 				74D1EFCA2862FB2C00A041AE /* CustomTableView.swift in Sources */,
@@ -426,8 +618,12 @@
 				74D1EFC2286274E200A041AE /* RootViewController.swift in Sources */,
 				7421C79A28607F630087321A /* SceneDelegate.swift in Sources */,
 				7421C7FE2860D2020087321A /* Fonts.swift in Sources */,
+				7409208928649456008A94C0 /* CellConfigurator.swift in Sources */,
+				74E9D0442864F91000EAE76B /* DomofonViewController.swift in Sources */,
 				7421C7B2286089330087321A /* LoadDataServiceProtocol.swift in Sources */,
+				740920912864A263008A94C0 /* DoorsTableView.swift in Sources */,
 				7421C7CB2860A2560087321A /* Door.swift in Sources */,
+				74E9D04C28650D6700EAE76B /* GradientView.swift in Sources */,
 				7421C8072860ED980087321A /* SnapshotTableViewCell.swift in Sources */,
 				7421C7C02860913D0087321A /* ParsDataServise.swift in Sources */,
 			);
@@ -571,7 +767,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9TMC8XK38T;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = rubetek_int/Info.plist;
+				INFOPLIST_FILE = rubetek_int/Core/AppFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -599,7 +795,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9TMC8XK38T;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = rubetek_int/Info.plist;
+				INFOPLIST_FILE = rubetek_int/Core/AppFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
