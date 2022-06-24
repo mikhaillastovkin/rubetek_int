@@ -32,7 +32,6 @@ final class RootViewController: UIViewController {
     init(controllers: [UIViewController]) {
         self.controllers = controllers
         super.init(nibName: nil, bundle: nil)
-
     }
 
     required init?(coder: NSCoder) {

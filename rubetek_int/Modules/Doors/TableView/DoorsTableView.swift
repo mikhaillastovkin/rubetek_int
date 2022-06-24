@@ -6,8 +6,6 @@
 //
 
 import Foundation
-
-import Foundation
 import RealmSwift
 
 final class DoorsTableView: CustomTableView {

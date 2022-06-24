@@ -122,6 +122,7 @@ extension DoorsTableViewController: UITableViewDelegate {
         guard let door = realmArray?[indexPath.row]
         else { return }
         let domofonVC = DomofonViewController(item: door)
+        domofonVC.modalPresentationStyle = .fullScreen
         self.present(domofonVC, animated: true)
     }
 

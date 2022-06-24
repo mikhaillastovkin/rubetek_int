@@ -44,6 +44,7 @@
 		74E9D0442864F91000EAE76B /* DomofonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9D0432864F91000EAE76B /* DomofonViewController.swift */; };
 		74E9D0472864F98100EAE76B /* MainTitleLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9D0462864F98100EAE76B /* MainTitleLable.swift */; };
 		74E9D04C28650D6700EAE76B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9D04B28650D6700EAE76B /* GradientView.swift */; };
+		74E9D0502865C4A400EAE76B /* StreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9D04F2865C4A400EAE76B /* StreamView.swift */; };
 		C876137D596AB85B3346A3C8 /* Pods_rubetek_int.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84F9D8B9FF4DDF48A41A84E /* Pods_rubetek_int.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		74E9D0432864F91000EAE76B /* DomofonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomofonViewController.swift; sourceTree = "<group>"; };
 		74E9D0462864F98100EAE76B /* MainTitleLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitleLable.swift; sourceTree = "<group>"; };
 		74E9D04B28650D6700EAE76B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		74E9D04F2865C4A400EAE76B /* StreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamView.swift; sourceTree = "<group>"; };
 		E84F9D8B9FF4DDF48A41A84E /* Pods_rubetek_int.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rubetek_int.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -233,7 +235,7 @@
 			children = (
 				74E9D04D28659BE100EAE76B /* Model */,
 				7421C7F92860D1580087321A /* Fonts */,
-				74E9D02C2864F4F600EAE76B /* CustomView */,
+				74E9D02C2864F4F600EAE76B /* CustomUI */,
 				7421C7D32860CA880087321A /* Serevices */,
 				7421C7FC2860D1F40087321A /* Extensions */,
 				74E9D02B2864F4AC00EAE76B /* AppFiles */,
@@ -253,16 +255,17 @@
 			path = AppFiles;
 			sourceTree = "<group>";
 		};
-		74E9D02C2864F4F600EAE76B /* CustomView */ = {
+		74E9D02C2864F4F600EAE76B /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				74E9D04E2865C47C00EAE76B /* StreamView */,
 				74E9D04A28650D5300EAE76B /* Gradient */,
 				74E9D0452864F96300EAE76B /* MainTitle */,
 				7421C7D62860CAD20087321A /* SegmentControll */,
 				74E9D02E2864F54200EAE76B /* Cells */,
 				74E9D02D2864F51600EAE76B /* TableView */,
 			);
-			path = CustomView;
+			path = CustomUI;
 			sourceTree = "<group>";
 		};
 		74E9D02D2864F51600EAE76B /* TableView */ = {
@@ -464,6 +467,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		74E9D04E2865C47C00EAE76B /* StreamView */ = {
+			isa = PBXGroup;
+			children = (
+				74E9D04F2865C4A400EAE76B /* StreamView.swift */,
+			);
+			path = StreamView;
+			sourceTree = "<group>";
+		};
 		A97DA466D81C1FDFDAE68FAB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -604,6 +615,7 @@
 				7421C7C2286093F70087321A /* HTTPPath.swift in Sources */,
 				7421C7F82860CE9C0087321A /* CustomSegmentControll.swift in Sources */,
 				74D1EF9F2861BAF000A041AE /* SimpleTableViewCell.swift in Sources */,
+				74E9D0502865C4A400EAE76B /* StreamView.swift in Sources */,
 				740920932864A434008A94C0 /* CameraSnapshotTableViewCell.swift in Sources */,
 				7409208F286497E9008A94C0 /* CamerasTableView.swift in Sources */,
 				7409205C2863965A008A94C0 /* RealmItemProtocol.swift in Sources */,

@@ -15,57 +15,9 @@ final class DomofonViewController: UIViewController {
         return mainTitle
     }()
 
-    private lazy var contentView: UIView = {
-        let contentView = UIView()
-        contentView.backgroundColor = .blue
-        contentView.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var contentView: StreamView = {
+        let contentView = StreamView(door: item)
         return contentView
-    }()
-
-    private lazy var topGradientView: GradientView = {
-        let gradientView = GradientView(frame: .zero)
-        gradientView.translatesAutoresizingMaskIntoConstraints = false
-        return gradientView
-    }()
-
-    private lazy var bottomGradientView: GradientView = {
-        let bottomGradientView = GradientView(frame: .zero)
-        bottomGradientView.reversColor()
-        bottomGradientView.translatesAutoresizingMaskIntoConstraints = false
-        return bottomGradientView
-    }()
-
-    private lazy var imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-
-    private lazy var streamIndicator: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "stream")
-        imageView.clipsToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-
-    private lazy var steamLabel: UILabel = {
-        let steamLabel = UILabel()
-        steamLabel.text = "Прямая трансляция"
-        steamLabel.textColor = .white
-        steamLabel.font = .steamLabelFont
-        steamLabel.translatesAutoresizingMaskIntoConstraints = false
-        return steamLabel
-    }()
-
-    private lazy var fullScreenButton: UIImageView = {
-        let fullScreenButton = UIImageView()
-        fullScreenButton.image = UIImage(named: "fullScreen")
-        let tapGR = UITapGestureRecognizer(target: self, action: #selector(pressFullScreen))
-        fullScreenButton.translatesAutoresizingMaskIntoConstraints = false
-        return fullScreenButton
     }()
 
     private lazy var keyButton: UIButton = {
@@ -85,6 +37,33 @@ final class DomofonViewController: UIViewController {
         return keyButton
     }()
 
+    private lazy var settingView: UIView = {
+        let settingView = UIView()
+        settingView.backgroundColor = .white
+        settingView.translatesAutoresizingMaskIntoConstraints = false
+        return settingView
+    }()
+
+    private lazy var backButton: UIImageView = {
+        let backButton = UIImageView()
+        backButton.image = UIImage(named: "back")
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(pressBackButton))
+        backButton.addGestureRecognizer(tapGR)
+        backButton.isUserInteractionEnabled = true
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        return backButton
+    }()
+
+    private lazy var blackscreenButton: UIImageView = {
+        let blackscreenButton = UIImageView()
+        blackscreenButton.image = UIImage(named: "blackscreen")
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(pressblackscreenButton))
+        blackscreenButton.addGestureRecognizer(tapGR)
+        blackscreenButton.isUserInteractionEnabled = true
+        blackscreenButton.translatesAutoresizingMaskIntoConstraints = false
+        return blackscreenButton
+    }()
 
     private let item: Door
 
@@ -105,15 +84,11 @@ final class DomofonViewController: UIViewController {
         view.backgroundColor = .customBackgroundColor
         view.addSubview(mainTitle)
         view.addSubview(contentView)
-        contentView.addSubview(imageView)
-        contentView.addSubview(topGradientView)
-        contentView.addSubview(bottomGradientView)
-        contentView.addSubview(streamIndicator)
-        contentView.addSubview(steamLabel)
-        contentView.addSubview(fullScreenButton)
         view.addSubview(keyButton)
+        view.addSubview(settingView)
+        settingView.addSubview(backButton)
+        settingView.addSubview(blackscreenButton)
         setConstraints()
-        loadImage()
     }
 
     private func setConstraints() {
@@ -134,61 +109,39 @@ final class DomofonViewController: UIViewController {
         ])
 
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        ])
-
-        NSLayoutConstraint.activate([
-            topGradientView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            topGradientView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            topGradientView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            topGradientView.heightAnchor.constraint(equalToConstant: 75)
-        ])
-
-        NSLayoutConstraint.activate([
-            bottomGradientView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            bottomGradientView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            bottomGradientView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            bottomGradientView.heightAnchor.constraint(equalToConstant: 75)
-        ])
-
-        NSLayoutConstraint.activate([
-            streamIndicator.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            streamIndicator.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -13),
-            streamIndicator.heightAnchor.constraint(equalToConstant: 14),
-            streamIndicator.widthAnchor.constraint(equalToConstant: 14)
-        ])
-
-        NSLayoutConstraint.activate([
-            steamLabel.leadingAnchor.constraint(equalTo: streamIndicator.trailingAnchor, constant: 11),
-            steamLabel.centerYAnchor.constraint(equalTo: streamIndicator.centerYAnchor),
-        ])
-
-        NSLayoutConstraint.activate([
-            fullScreenButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -18),
-            fullScreenButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -18),
-            fullScreenButton.heightAnchor.constraint(equalToConstant: 12),
-            fullScreenButton.widthAnchor.constraint(equalToConstant: 12),
-        ])
-
-        NSLayoutConstraint.activate([
             keyButton.heightAnchor.constraint(equalToConstant: 105),
             keyButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 16),
             keyButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -16),
             keyButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -98)
         ])
+
+        NSLayoutConstraint.activate([
+            settingView.topAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -75),
+            settingView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            settingView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            settingView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+
+        NSLayoutConstraint.activate([
+            backButton.topAnchor.constraint(equalTo: settingView.topAnchor, constant: 13),
+            backButton.leadingAnchor.constraint(equalTo: settingView.leadingAnchor, constant: 8),
+            backButton.heightAnchor.constraint(equalToConstant: 32),
+            backButton.widthAnchor.constraint(equalToConstant: 32)
+        ])
+
+        NSLayoutConstraint.activate([
+            blackscreenButton.topAnchor.constraint(equalTo: settingView.topAnchor, constant: 13),
+            blackscreenButton.trailingAnchor.constraint(equalTo: settingView.trailingAnchor, constant: -16),
+            blackscreenButton.heightAnchor.constraint(equalToConstant: 32),
+            blackscreenButton.widthAnchor.constraint(equalToConstant: 32)
+        ])
     }
 
-    @objc private func pressFullScreen() {
-
+    @objc private func pressBackButton() {
+        dismiss(animated: true)
     }
 
-    private func loadImage() {
-        guard let urlString = item.snapshot,
-              let url = URL(string: urlString)
-        else { return }
-        Nuke.loadImage(with: url, into: imageView)
+    @objc private func pressblackscreenButton() {
+
     }
 }

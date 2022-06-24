@@ -108,4 +108,3 @@ extension CustomSegmentControll: UITabBarDelegate {
         changeSegmentedControlLinePosition()
     }
 }
-
