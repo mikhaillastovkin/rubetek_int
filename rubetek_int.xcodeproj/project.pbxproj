@@ -41,7 +41,6 @@
 		74D1EFC2286274E200A041AE /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EFC1286274E100A041AE /* RootViewController.swift */; };
 		74D1EFC82862F58800A041AE /* DoorsTableViewCintroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EFC72862F58800A041AE /* DoorsTableViewCintroller.swift */; };
 		74D1EFCA2862FB2C00A041AE /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D1EFC92862FB2B00A041AE /* CustomTableView.swift */; };
-		74E9D0402864F75B00EAE76B /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9D03F2864F75B00EAE76B /* RealmService.swift */; };
 		74E9D0442864F91000EAE76B /* DomofonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9D0432864F91000EAE76B /* DomofonViewController.swift */; };
 		74E9D0472864F98100EAE76B /* MainTitleLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9D0462864F98100EAE76B /* MainTitleLable.swift */; };
 		74E9D04C28650D6700EAE76B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9D04B28650D6700EAE76B /* GradientView.swift */; };
@@ -87,7 +86,6 @@
 		74D1EFC1286274E100A041AE /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		74D1EFC72862F58800A041AE /* DoorsTableViewCintroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsTableViewCintroller.swift; sourceTree = "<group>"; };
 		74D1EFC92862FB2B00A041AE /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
-		74E9D03F2864F75B00EAE76B /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		74E9D0432864F91000EAE76B /* DomofonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomofonViewController.swift; sourceTree = "<group>"; };
 		74E9D0462864F98100EAE76B /* MainTitleLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitleLable.swift; sourceTree = "<group>"; };
 		74E9D04B28650D6700EAE76B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -187,13 +185,12 @@
 			path = ParsDataServise;
 			sourceTree = "<group>";
 		};
-		7421C7D02860C41C0087321A /* RealmService */ = {
+		7421C7D02860C41C0087321A /* RealmProtocol */ = {
 			isa = PBXGroup;
 			children = (
 				7409205B2863965A008A94C0 /* RealmItemProtocol.swift */,
-				74E9D03F2864F75B00EAE76B /* RealmService.swift */,
 			);
-			name = RealmService;
+			name = RealmProtocol;
 			path = ../..;
 			sourceTree = "<group>";
 		};
@@ -201,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				7421C7B628608B300087321A /* Error */,
-				7421C7D02860C41C0087321A /* RealmService */,
 				7421C7AB2860809E0087321A /* Networking */,
 			);
 			path = Serevices;
@@ -235,6 +231,7 @@
 		74E9D02A2864F49C00EAE76B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				74E9D04D28659BE100EAE76B /* Model */,
 				7421C7F92860D1580087321A /* Fonts */,
 				74E9D02C2864F4F600EAE76B /* CustomView */,
 				7421C7D32860CA880087321A /* Serevices */,
@@ -459,6 +456,14 @@
 			path = Gradient;
 			sourceTree = "<group>";
 		};
+		74E9D04D28659BE100EAE76B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7421C7D02860C41C0087321A /* RealmProtocol */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A97DA466D81C1FDFDAE68FAB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -591,7 +596,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74E9D0402864F75B00EAE76B /* RealmService.swift in Sources */,
 				7421C7AD286080E90087321A /* EndPointProtocol.swift in Sources */,
 				740920952864A51F008A94C0 /* DoorSnapshotTableViewCell.swift in Sources */,
 				7421C7B02860819B0087321A /* HTTPMethod.swift in Sources */,

@@ -20,12 +20,30 @@ class Door: Object, Codable {
 
 extension Door: RealmItemProtocol {
 
+    typealias RealmType = Door
+
+    static func changeName(object: Door?, value: String?) throws {
+        let realm = try Realm()
+        try realm.write {
+            object?.name = value
+        }
+    }
+
+    static func changeFavorite(object: Door?) throws {
+        let realm = try Realm()
+        try realm.write {
+            guard let value = object?.favorites
+            else { return }
+            object?.favorites = !value
+        }
+    }
+
     static func loadData(complition: @escaping () -> Void) {
         let parseServise = ParsDataServise<[Door]>(loadDataSevice: LoadDataService())
         parseServise.fechRequest(from: DoorsEndPoint()) { doors, error in
             guard let doors = doors
             else { return }
-            try? RealmService.save(items: doors)
+            try? Door.save(items: doors)
             complition()
         }
 

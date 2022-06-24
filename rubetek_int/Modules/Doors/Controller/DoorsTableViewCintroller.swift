@@ -44,7 +44,7 @@ final class DoorsTableViewController: UIViewController  {
         })
 
         Door.loadData { [weak self] in
-            self?.realmArray = try? Door.getData(typeOf: Door.self)
+            self?.realmArray = try? Door.getData()
             self?.tableView.content(self?.realmArray)
         }
     }
@@ -134,8 +134,7 @@ extension DoorsTableViewController: UITableViewDelegate {
         let change = UIContextualAction(style: .normal, title: nil) { [weak self] action, view, complition in
 
             self?.changeName { text in
-                try? RealmService.changeNameDoor(object: self?.realmArray?[indexPath.row],
-                                            value: text)
+                try? Door.changeName(object: self?.realmArray?[indexPath.row], value: text)
                 tableView.reloadData()
             }
             complition(true)
@@ -144,7 +143,7 @@ extension DoorsTableViewController: UITableViewDelegate {
         change.image = UIImage(named: "edit")
 
         let favorite = UIContextualAction(style: .normal, title: nil) { [weak self] action, view, complition in
-            try? RealmService.changeFavoriteDoor(object: self?.realmArray?[indexPath.row])
+            try? Door.changeFavorite(object: self?.realmArray?[indexPath.row])
             tableView.reloadData()
             complition(true)
         }

@@ -30,7 +30,7 @@ final class CamsTableViewController: UIViewController {
         setupTableView()
 
         Camera.loadData { [weak self] in
-            self?.realmArray = try? Camera.getData(typeOf: Camera.self)
+            self?.realmArray = try? Camera.getData()
             self?.tableView.content(self?.realmArray)
 
             self?.notificationToken = self?.realmArray?.observe({ change in

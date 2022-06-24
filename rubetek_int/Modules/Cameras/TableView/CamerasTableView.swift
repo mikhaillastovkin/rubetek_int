@@ -54,7 +54,7 @@ final class CamerasTableView: CustomTableView {
         else { return nil }
 
         let favorite = UIContextualAction(style: .normal, title: nil) { action, view, complition in
-            try? RealmService.changeFavoriteCamera(object: item.item)
+            try? Camera.changeFavorite(object: item.item)
             complition(true)
         }
         favorite.backgroundColor = .customBackgroundColor

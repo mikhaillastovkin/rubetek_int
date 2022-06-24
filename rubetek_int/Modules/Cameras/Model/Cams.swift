@@ -21,16 +21,35 @@ class Camera: Object, Codable {
     @Persisted var favorites: Bool?
     @Persisted var rec: Bool?
     @Persisted var userName: String?
+
 }
 
 extension Camera: RealmItemProtocol {
+
+    typealias RealmType = Camera
+
+    static func changeName(object: Camera?, value: String?) throws {
+        let realm = try Realm()
+        try realm.write {
+            object?.name = value
+        }
+    }
+
+    static func changeFavorite(object: Camera?) throws {
+        let realm = try Realm()
+        try realm.write {
+            guard let value = object?.favorites
+            else { return }
+            object?.favorites = !value
+        }
+    }
 
     static func loadData(complition: @escaping () -> Void) {
         let parseServise = ParsDataServise<Cameras>(loadDataSevice: LoadDataService())
         parseServise.fechRequest(from: CamsEndPoint()) { cameras, error in
             guard let cameraArray = cameras?.cameras
             else { return }
-            try? RealmService.save(items: cameraArray)
+            try? RealmType.save(items: cameraArray)
             complition()
         }
 
